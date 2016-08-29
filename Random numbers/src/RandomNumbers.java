@@ -13,25 +13,34 @@ public class RandomNumbers
 			int start = (int) (Math.random() * 10) + 1;
 			int range = (int) (Math.random() * 10) + 1;
 			Scanner input2 = new Scanner(System.in);
-			int answer;
+			String answer;
 			int answersRight = 0;
 			for (int i = 0; i<questions; i++)
 				{
 					if(i%2 == 0)
 						{
-							int realAnswer = start - (range + start);
+							String realAnswer = Integer.toString(start) +  "-" + Integer.toString(range + start);
 							System.out.println("What will the range of: int randomNumber = (int)(math.Random() * " + range + ") + " + start + " be?");
-							answer = input.nextInt();
-								if (answer == realAnswer)
+							answer = input2.nextLine();
+								if (answer.equals(realAnswer))
 									{
 										System.out.println("That is correct");
 										answersRight++;
+										start = (int) (Math.random() * 10) + 1;
+										range = (int) (Math.random() * 10) + 1;
 									}
 								else
 									{
 										System.out.println("That is incorrect");
+										start = (int) (Math.random() * 10) + 1;
+										range = (int) (Math.random() * 10) + 1;
 									}
 						}
+					if(i%2 == 1)
+						{
+							
+						}
 				}
+			System.out.println("You got " + answersRight + " correct");
 		}
 	}
