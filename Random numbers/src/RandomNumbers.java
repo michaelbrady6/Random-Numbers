@@ -38,9 +38,21 @@ public class RandomNumbers
 						}
 					if(i%2 == 1)
 						{
-							
+							String realAnswer = "int randomNumber = (int)(Math.random() * " + Integer.toString(range) + ") + " + Integer.toString(start);
+							System.out.println("Type the code to generate random numbers that start at " + start + " and have a range of " + range + " with the variable name of randomNumber.");
+							answer = input2.nextLine();
+							if (answer.equals(realAnswer))
+							{
+								System.out.println("That was correct");
+								answersRight++;
+							}
+							else
+							{
+								System.out.println("That was incorrect");
+							}
 						}
 				}
 			System.out.println("You got " + answersRight + " correct");
 		}
 	}
+
